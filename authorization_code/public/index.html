@@ -2,7 +2,10 @@
 <html>
   <head>
     <title>Example of the Authorization Code flow with Spotify</title>
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"> -->
+    <link type="text/css" href="css/flatly-bootstrap.min.css" rel="stylesheet" />
+    <link type="text/css" href="css/bootstrap-responsive.min.css" rel="stylesheet"/>
+    <!-- <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> -->
     <style type="text/css">
       #login, #loggedin {
         display: none;
@@ -34,12 +37,12 @@
     </div>
 
     <script id="user-profile-template" type="text/x-handlebars-template">
-      <h1>Logged in as {{display_name}}</h1>
-      <div class="media">
-        <div class="pull-left">
+      <!-- <h1>Logged in as {{display_name}}</h1> -->
+      <!-- <div class="media"> -->
+     <!--    <div class="pull-left">
           <img class="media-object" width="150" src="{{images.0.url}}" />
-        </div>
-        <div class="media-body">
+        </div> -->
+<!--         <div class="media-body">
           <dl class="dl-horizontal">
           <p>{{items}}</p>
             <dt>Display name</dt><dd class="clearfix">{{display_name}}</dd>
@@ -51,24 +54,28 @@
             <dt>Country</dt><dd>{{country}}</dd>
             <dt>test</dt><dd>{{product}}</dd>
           </dl>
-        </div>
+        </div> -->
+      <!-- </div> -->
+      <div class="media">
+        <!-- <div class="pull-left"> -->
+        <h1>My Top 20<small> &nbsp; by {{display_name}}</small></h1>
+        <p>&nbsp;&nbsp;Your Top 20 Spotify Artists</p>
+        <!-- </div> -->
       </div>
     </script>
 
     <script id="user-artists-template" type="text/x-handlebars-template">
-      <h1>Logged in as NULL</h1>
       <div class="media">
-        <div class="pull-left">
-        </div>
-        <div class="media-body">
-          <dl class="dl-horizontal">
-            <ul class="people_list">
-              {{#each items}}
-              <li>Artist: {{this.name}} <img height=200px src="{{this.images.0.url}}"></li>
-              {{/each}}
-            </ul>
-          </dl>
-        </div>
+      <ul class="thumbnails">
+        {{#each items}}
+          <li class="span3">
+            <a class="thumbnail" href="{{this.images.0.url}}" target="_blank">
+              <img src="{{this.images.0.url}}" title="{{this.name}}"/>
+              <small>{{this.name}}</small>
+            </a>
+          </li>
+        {{/each}}
+      </ul>
       </div>
     </script>
 
