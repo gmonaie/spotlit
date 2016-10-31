@@ -16,6 +16,24 @@
         white-space: nowrap;
         width: 500px;
       }
+
+       .summary-thumbnail,
+ .summary-thumbnail img {
+    width: auto !important; 
+    /*height: 300px !important;*/
+ }
+
+ /*.summary-block .summary-thumbnail {
+   overflow: hidden;
+   height: auto;
+ }
+ 
+ .summary-block .summary-thumbnail img{
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+ }*/
     </style>
   </head>
 
@@ -32,7 +50,7 @@
         </div>
         <div id="oauth">
         </div>
-        <button class="btn btn-default" id="obtain-new-token">Obtain new token using the refresh token</button>
+        <!-- <button class="btn btn-default" id="obtain-new-token">Obtain new token using the refresh token</button> -->
       </div>
     </div>
 
@@ -57,10 +75,10 @@
         </div> -->
       <!-- </div> -->
       <div class="media">
-        <!-- <div class="pull-left"> -->
-        <h1>My Top 20<small> &nbsp; by {{display_name}}</small></h1>
-        <p>&nbsp;&nbsp;Your Top 20 Spotify Artists</p>
-        <!-- </div> -->
+        <h1>My Top 20<small> &nbsp; {{display_name}}</small>
+          <button class="btn btn-danger" id="obtain-new-token" align="right">Share</button>
+        </h1>
+        <p>&nbsp;Your Top 20 Spotify Artists</p>
       </div>
     </script>
 
@@ -80,11 +98,11 @@
     </script>
 
     <script id="oauth-template" type="text/x-handlebars-template">
-      <h2>oAuth info</h2>
+      <!-- <h2>oAuth info</h2>
       <dl class="dl-horizontal">
         <dt>Access token</dt><dd class="text-overflow">{{access_token}}</dd>
         <dt>Refresh token</dt><dd class="text-overflow">{{refresh_token}}></dd>
-      </dl>
+      </dl> -->
     </script>
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.1/handlebars.min.js"></script>
